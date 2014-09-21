@@ -29,6 +29,7 @@ class NoteCardsController < ApplicationController
   # POST /note_cards.json
   def create
     @note_card = NoteCard.new(note_card_params)
+    @note_card.user = current_user
 
     respond_to do |format|
       if @note_card.save
