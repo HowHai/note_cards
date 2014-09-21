@@ -1,4 +1,5 @@
 ActiveAdmin.register Resource do
+  permit_params :content
 
 
   # See permitted parameters documentation:
