@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   resources :note_cards do
   #->Prelang (voting/acts_as_votable)
   member do
