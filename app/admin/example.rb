@@ -1,4 +1,5 @@
 ActiveAdmin.register Example do
+  permit_params :content
 
 
   # See permitted parameters documentation:
