@@ -1,5 +1,5 @@
 class ExamplesController < ApplicationController
-  before_action :set_example, only: [:show, :edit, :update, :destroy]
+  before_action :set_example, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /examples
   # GET /examples.json
