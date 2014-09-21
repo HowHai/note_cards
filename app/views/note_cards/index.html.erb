@@ -1,0 +1,27 @@
+<h1>Listing note_cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @note_cards.each do |note_card| %>
+      <tr>
+        <td><%= note_card.title %></td>
+        <td><%= note_card.user %></td>
+        <td><%= link_to 'Show', note_card %></td>
+        <td><%= link_to 'Edit', edit_note_card_path(note_card) %></td>
+        <td><%= link_to 'Destroy', note_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Note card', new_note_card_path %>
