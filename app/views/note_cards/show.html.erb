@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = NoteCard -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => NoteCard %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @note_card.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @note_card.title %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @note_card.user %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              note_cards_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_note_card_path(@note_card), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              note_card_path(@note_card),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_note_card_path(@note_card) %> |
-<%= link_to 'Back', note_cards_path %>
